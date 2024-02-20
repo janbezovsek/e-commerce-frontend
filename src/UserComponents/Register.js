@@ -3,7 +3,7 @@ import '../UserComponents/Register.css'
 import axios from "axios";
 
 //potrebno je dodati funkcijo,ki preveri, če račun že obstaja 
-//prav tako ob uspešni registraciji preusmeritev na neko določeno stran
+
 const Register = () => {
     
     
@@ -11,10 +11,12 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [register, setRegister] = useState(false);
-    const [user, setUser] = useState(false)
+    const [user, setUser] = useState(false)//for state management
     
 
     const handleSubmit = (e) => {
+      console.log(email)
+      console.log(password)
         // prevent the form from refreshing the whole page
         e.preventDefault();
         // set configurations
@@ -32,7 +34,8 @@ const Register = () => {
       .then((result) => {
         console.log(result)
         setRegister(true);
-        
+        // redirect user to the home page
+        window.location.href = "/";
         
       })
       .catch((error) => {

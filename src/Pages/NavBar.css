@@ -47,6 +47,15 @@ nav {
 
 }
 
+.cart {
+    cursor: pointer;
+}
+
+.cart :hover {
+    color:#17cf97;
+    transition: 0.3s ease-in-out;
+}
+
 #mobile {
     display: none;
 }
@@ -89,6 +98,7 @@ nav {
     font-size: 24px;
     cursor: pointer;
 }
+
 
 
 

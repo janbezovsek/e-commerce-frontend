@@ -9,6 +9,8 @@ import './NavBar.css';
 
 
 
+
+
 const Navbar=({ login })=>{
 
     const [clicked, setClicked] = useState(false)
@@ -18,6 +20,9 @@ const Navbar=({ login })=>{
     const handleClick = () => {
         setClicked(!clicked)
     }
+
+
+
 
     return (   
         <>
@@ -50,12 +55,26 @@ const Navbar=({ login })=>{
                         <li>
                         <SearchBar />
                         </li>
-                        <li > 
+                        <li className='cart'> 
                         <FontAwesomeIcon icon={faCartShopping} color="#919db1" />
                         </li>
-                        <li>
+                        <li className='cart'>
                         <FontAwesomeIcon icon={faUser} color="#919db1"/>
                         </li>
+                        {items ? (
+                        <li>
+                            <div style={{color : '#919db1' }}>
+                            Signed In 
+                            </div>
+                        </li>)
+                        :  (
+                        <li>
+                            <div style={{color : '#919db1' }}>
+                            Hello, sign in
+                            </div>
+                        </li> 
+                        )}
+                        
                         </ul>
                         
                     </div>
@@ -67,8 +86,11 @@ const Navbar=({ login })=>{
                         "fas fa-bars"}>
                         </i>
                     </div>
+
+                    
                 
         </nav>
+            
         </> 
     )
 

@@ -14,6 +14,8 @@ import AuthComponent from "./UserComponents/AuthComponent.js"
 import ProtectedRoutes from './UserComponents/ProtectedRoutes.js';
 
 
+
+
 export const Context = React.createContext()
 
 function App() {
@@ -51,11 +53,16 @@ function App() {
     
     <div className="navbar">
     <Navbar login={login}/>
+    
     </div>
+
+
     <div className="App">
     
     
+    
     <Routes>
+    
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/cartItems" element={<CartItems />} />
         <Route exact path="/checkOutPage" element={<CheckOutPage />} />

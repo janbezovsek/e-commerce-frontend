@@ -24,7 +24,7 @@ form{
 .text_area{
     align-content: center;
     border-radius: 22px;
-    margin-bottom: 35px;
+    margin-bottom: 55px;
     width: 100%;
     height: 64px;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
@@ -69,4 +69,14 @@ form{
     cursor: pointer;
     display: block;
     text-decoration: none;
+}
+
+.notemail {
+    color : #ec2222;
+    
+}
+
+.notpassword {
+    color : #ec2222;
+    
 }
