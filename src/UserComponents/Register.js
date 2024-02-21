@@ -12,13 +12,43 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [register, setRegister] = useState(false);
     const [user, setUser] = useState(false)//for state management
+    //state error for invalid form inputs
+  const [errors, setErrors] = useState({})
     
 
     const handleSubmit = (e) => {
-      console.log(email)
-      console.log(password)
-        // prevent the form from refreshing the whole page
-        e.preventDefault();
+      
+    // prevent the form from refreshing the whole page
+    e.preventDefault();
+
+        //input validation
+    //object for storing validation errors
+    const validationErrors = {}
+
+    //email validation
+    if(!email.trim()) {
+      validationErrors.email = "email is required"
+    } else if(!/\S+@\S+\.\S+/.test(email)){
+      validationErrors.email = "email is not valid"
+    }
+
+    //password validation
+    if(!password.trim()) {
+      validationErrors.password = "password is required"
+    } else if(password.length < 6 ){
+      validationErrors.password = "password should be at least 6 characters"
+    }
+
+    //if there where errors they where added in here
+    setErrors(validationErrors)
+
+
+
+    //if there are no errors, meaning all inputs are valid(email has @sign in it, password isn't less than 6 char ),
+    //the POST request will be sent to the API
+    if(Object.keys(validationErrors).length === 0 ){
+
+
         // set configurations
         const configuration = {
         method: "post",
@@ -45,6 +75,8 @@ const Register = () => {
       });
     }
 
+  }
+
 
 
 
@@ -64,6 +96,9 @@ const Register = () => {
               placeholder="email"
 
             />
+            <div className="notemail">
+            {errors.email && <span>{errors.email}</span>}
+            </div>
           </div>
           <div className="text_area">
             <input
@@ -76,6 +111,9 @@ const Register = () => {
               placeholder="Password"
 
             />
+            <div className="notpassword">
+            {errors.password && <span>{errors.password}</span>}
+            </div>
           </div>
           
           <input

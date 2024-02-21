@@ -1,4 +1,5 @@
 import React,{  useState } from 'react'
+import {Link} from 'react-router-dom';
 import axios from "axios";
 import Cookies from "universal-cookie";
 import '../UserComponents/Login.css'
@@ -44,7 +45,7 @@ const Login = ({ handleLogin, login }) => {
 
     //if there where errors they where added in here
     setErrors(validationErrors)
-    console.log(errors)
+    
 
 
     //if there are no errors, meaning all inputs are valid(email has @sign in it, password isn't less than 6 char ),
@@ -136,7 +137,9 @@ const Login = ({ handleLogin, login }) => {
 
 
         </form>
-        <a className="link" href="/signup">Sign Up</a>
+        <div className="link">
+        <Link to="/register">Sign Up</Link>
+        </div>
       </div>
     </>
   )
