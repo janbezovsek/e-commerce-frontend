@@ -5,8 +5,13 @@
     padding: 0 15px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
+.text {
+    width: 400px;
+}
+/*
 input {
     background-color: transparent;
     border: none;
@@ -19,3 +24,4 @@ input {
 input:focus {
     outline: none;
 }
+*/

@@ -12,6 +12,9 @@ import NoPage from './Pages/NoPage.js';
 import Navbar from './Pages/NavBar';
 import AuthComponent from "./UserComponents/AuthComponent.js"
 import ProtectedRoutes from './UserComponents/ProtectedRoutes.js';
+import Footer from './Pages/Footer.js'
+
+
 
 
 
@@ -53,9 +56,9 @@ function App() {
     
     <div className="navbar">
     <Navbar login={login}/>
-    
     </div>
 
+    
 
     <div className="App">
     
@@ -74,6 +77,10 @@ function App() {
           <Route exact path="/auth-endpoint"  element={<AuthComponent />}/>
         </Route> 
     </Routes>
+    </div>
+
+    <div className="footer">
+      <Footer />
     </div>
     
     </>

@@ -1,46 +1,88 @@
 import React from 'react'
-import { Slide } from 'react-slideshow-image';
 import './SlideShow.css'
-import 'react-slideshow-image/dist/styles.css'
+import Carousel from 'react-bootstrap/Carousel';
+import img1 from '../images/navbarImages/georgina1.avif'
+import img2 from '../images/navbarImages/georgina4.webp'
+import img3 from '../images/navbarImages/georgina6.webp'
+import img6 from '../images/navbarImages/handbags3.jpg'
+import img7 from '../images/navbarImages/washing machines.jpg'
+import img8 from '../images/navbarImages/sofa1.jpg'
+
+
 
 
 const SlideShow = () => {
     
-    const spanStyle = {
-        padding: '20px',
-        background: '#efefef',
-        color: '#000000'
-      }
-      
-      const divStyle = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundSize: 'cover',
-        height: '400px'
-      }
-
-
-    const images = [
-        "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-        "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-        "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    ];
-
-
-  return (
-    <>
-    <Slide>
-    {images.map((slideImage, index)=> (
-            <div key={index}>
-              <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-                <span style={spanStyle}>{slideImage.caption}</span>
-              </div>
-            </div>
-          ))} 
-</Slide>
-</>
-  )
+    return (
+      <>
+      <div className="images">
+      <Carousel>
+      <Carousel.Item>
+        <img src={img1} alt="" text="georgina1" 
+        style={{
+                width: "100%",
+                aspectRatio: "10 / 6 ",
+                margin: "0 auto"}}/>
+                <Carousel.Caption>
+          <h1>-30% discount</h1>
+          <p>Guess handbags</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={img2} alt="" text="georgina2" style={{
+                width: "100%",
+                aspectRatio: "10 / 6 ",
+                margin: "0 auto"}} />
+                <Carousel.Caption>
+          <h1>-30% discount</h1>
+          <p>Guess handbags</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={img3} alt="" text="georgina3" 
+        style={{
+          width: "100%",
+          aspectRatio: "10 / 6 ",
+          margin: "0 auto"}} />
+          <Carousel.Caption>
+          <h1>-30% discount</h1>
+          <p>Guess handbags</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={img6} alt="" text="handbag" style={{
+                width: "100%",
+                aspectRatio: "10 / 6 ",
+                margin: "0 auto"}} />
+                <Carousel.Caption>
+          <h1>-30% discount</h1>
+          <p>Guess handbags</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={img7} alt="" text="washing machine" style={{
+                width: "100%",
+                aspectRatio: "10 / 6 ",
+                margin: "0 auto"}} />
+                <Carousel.Caption>
+          <h1>-25% discount for all Gorenje washing machines</h1>
+          <p>Gorenje washing machine</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={img8} alt="" text="sofa" style={{
+                width: "100%",
+                aspectRatio: "10 / 6 ",
+                margin: "0 auto"}} />
+                <Carousel.Caption>
+          <h1>-40% everything must go</h1>
+          <p>Trend store sofa</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    </div>
+    </>
+    )
 }
 
 
