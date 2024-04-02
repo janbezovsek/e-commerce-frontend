@@ -13,17 +13,29 @@ import Navbar from './Pages/NavBar';
 import AuthComponent from "./UserComponents/AuthComponent.js"
 import ProtectedRoutes from './UserComponents/ProtectedRoutes.js';
 import Footer from './Pages/Footer.js'
+import dataProducts from './CartComponents/data.js';
+import bannersItems from './CartComponents/banners.js';
+import  UserContext  from './CartComponents/userContext.js';
 
 
 
 
 
 
-export const Context = React.createContext()
+
 
 function App() {
   
+  
+  //state for saving cart items that are displayed on Home page
+  const [ items, setItems ] = useState(dataProducts)
 
+  //state for saving banner items that are displayed on Home page
+const [ banners, setBanners ] = useState(bannersItems)
+  
+  
+
+  //state for determening whether user is logged in or not
   const [login, setLogin] = useState(null);
 
   //function to set login to true
@@ -53,7 +65,7 @@ function App() {
   return (
     <>
 
-    
+    <UserContext.Provider value={{items, setItems, banners, setBanners}}>
     <div className="navbar">
     <Navbar login={login}/>
     </div>
@@ -83,6 +95,7 @@ function App() {
       <Footer />
     </div>
     
+    </UserContext.Provider>
     </>
   );
 }

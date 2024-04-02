@@ -71,6 +71,20 @@ nav {
     transition: 0.3s ease-in-out;
 }
 
+.cart-count {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    margin-top: -20px;
+    margin-right: -33px;
+}    
+
 #mobile {
     display: none;
 }
@@ -80,12 +94,13 @@ nav {
 }
 
 @media screen and (max-width: 950px) {
+    /*add overflow-y: scroll; to page so when navbar is clicked you cant move up and down*/
     #navbar {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        position: fixed;
+        position: fixed;/*absolute? */
         margin-top: -25px;/*for box in mobile view */
         top: 90px;
         right: -1800px;
@@ -95,6 +110,7 @@ nav {
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 40px 0 0 10px;
         transition: 0.8s ease-in-out;
+        
 }
 
 #navbar.active {

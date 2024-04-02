@@ -68,6 +68,7 @@ const Navbar=({ login })=>{
                         <li>
                         <SearchBar />
                         </li>
+                        <div className="cart-count">0</div>
                         <li className='cart'> 
                         <FontAwesomeIcon icon={faCartShopping} color="#919db1" onClick={() => setShow(true)} />
                         <Modal
