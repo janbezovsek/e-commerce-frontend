@@ -1,0 +1,49 @@
+
+
+.cartItems {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 10px solid transparent;
+    
+}
+
+.cart-image {
+    background-color: rgb(225, 199, 238);
+    border-radius: 5px;
+    height: 400px;
+    width: 40%;
+    
+}
+
+.cart-description {
+    background-color: rgb(225, 199, 238);
+    border-radius: 5px;
+    height: 400px;
+    width: 25%;
+}
+
+.about-item {
+    background-color: rgb(225, 199, 238);
+    border-radius: 5px;
+    height: 400px;
+    width: 80%;
+}
+
+.info-title {
+    border-bottom: 1px solid #DDD;
+}
+
+.info-price {
+    border-bottom: 1px solid #DDD;
+}
+
+.info-description {
+    border-bottom: 1px solid #DDD;
+}
+
+.cart-status {
+    background-color: rgb(225, 199, 238);
+    border-radius: 5px;
+    height: 400px;
+    width: 15%;
+}
