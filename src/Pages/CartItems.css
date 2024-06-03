@@ -1,0 +1,31 @@
+.choseItems-cartitems {
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.product {
+    width: 300px;
+}
+
+.price-item {
+    width: 1200px;
+    margin-top: -25px;
+    border-bottom: 1px solid #fcefef;
+}
+
+
+
+.cart-item {
+    
+    width: 300px;
+}
+
+.title {
+    font-size: 18px;
+    width: 300px;
+}
+
+.price {
+    width: 1200px;
+}

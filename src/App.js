@@ -18,7 +18,7 @@ import dataProductsList from './CartComponents/data2.js';
 import bannersItems from './CartComponents/banners.js';
 import  UserContext  from './CartComponents/userContext.js';
 import ItemDescription from './Pages/ItemDescription.js';
-import ItemContext from './CartComponents/itemContext.js';
+
 
 
 
@@ -30,13 +30,13 @@ import ItemContext from './CartComponents/itemContext.js';
 function App() {
   
   
-  //state for saving cart items that are displayed on Home page
-  const [ items, setItems ] = useState(dataProducts)
+//state for saving cart items that are displayed on Home page
+const [ items, setItems ] = useState(dataProducts)
 
-  //state for displaying titles in searchbar for items that we typed in
-  const [ items2, setItems2 ] = useState(dataProductsList)
+//state for displaying titles in searchbar for items that we typed in
+const [ items2, setItems2 ] = useState(dataProductsList)
 
-  //state for saving banner items that are displayed on Home page
+//state for saving banner items that are displayed on Home page
 const [ banners, setBanners ] = useState(bannersItems)
   
   

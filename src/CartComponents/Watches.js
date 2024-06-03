@@ -1,7 +1,7 @@
 import React,{ useState, useContext, useEffect } from 'react'
 import UserContext from '../CartComponents/userContext.js';
-import ItemContext from '../CartComponents/itemContext.js';
-import ItemDescription from '../Pages/ItemDescription.js';
+
+
 import './Items.css'
 
 
@@ -24,7 +24,7 @@ const newBanners = [...banners];//deconstructing
 //we are using this object to store information about the item that we currently clicked on
 //and send this information to ItemDescription component
 
- 
+
 
 const [selectedItem, setSelectedItem] = useState(
   [{
@@ -49,10 +49,9 @@ const selectItem = (item) => {
                   image: item.image,
                   description: item.description,
                   price: item.price,
-                  info: item.info
-                 
+                  info: item.info                 
   }])
-  console.log(selectedItem)
+  
 }
 
 useEffect(() => {
@@ -107,7 +106,7 @@ useEffect(() => {
                         <div className="items" key={index}>
                         {item.watches && item.watches.map((item, index) => (
                         <div key={index}>
-                        <div className="item" onClick={() => {selectItem(item);navigateToShop()}}>{/*here is a problem,not working when navigate to shop is activated*/ }
+                        <div className="item" onClick={() => {selectItem(item);navigateToShop()}}>
                             
                         <img src={item.image} alt="" width="230" height="240"/> 
                         </div>

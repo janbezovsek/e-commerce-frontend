@@ -1,12 +1,18 @@
 import React,{ useEffect } from 'react'
-import  { NumericFormat } from 'react-number-format'
-import './CartItems.css'
-
-const CartItems = () => {
+import  { NumericFormat } from 'react-number-format';
 
 
 
-  const TotalArray = []
+
+
+
+const CartTotal = () => {
+
+  
+    
+
+
+    const TotalArray = []
 
     Object.keys(localStorage).forEach((key) => {
         
@@ -44,40 +50,34 @@ const CartItems = () => {
 }
 
 
+
 //scroll to top of the page on first render
 useEffect(() => {
-  window.scrollTo(0, 0)
-}, [])
+    window.scrollTo(0, 0)
+  }, [])
 
 
 
 
-  return (
+return (
     <>
-    <div className="Cart">
+    <div className="App">
     
-    <div className="CartTotal-cartitems">
-        <div className="choseItems-cartitems">
-        <div className="product">  Product </div>
-        <div className="price-item">  Price </div>
-        
-        <br/>
-        <br/>
+    <div className="CartTotal">
+        <div className="choseItems">
         {TotalArray.map((item, index) => {
                         return (
                         
-                        <div className="cart-items-items" key={index}>
-                          
+                        <div className="items" key={index}>
                         {item && item.map((item, index) => (
                         <div key={index}>
-                        <div className="price">EUR {item.price}</div>
-                        <div className="cart-item" /*onClick={() => {selectItem(item);navigateToShop()}}*/>
+                        <div className="item" /*onClick={() => {selectItem(item);navigateToShop()}}*/>
                         
-                        <img src={item.image} alt="" width="150" height="160"/> 
+                        <img src={item.image} alt="" width="50" height="50"/> 
                         </div>
-                        <div className="title">{item.title}</div>
-                        
-                        
+                        <h3>{item.title}</h3>
+                        <h3>EUR {item.price}</h3>
+                        <div className='stock'>{item.quantity} {item.stock}</div>
                         <hr />
                         </div>
                         
@@ -89,7 +89,7 @@ useEffect(() => {
         </div>
         <h3>
             Subtotal({TotalArray.length} items) :
-            <span className="Cart-Total-price">
+            <span className="CartTotal-price">
                 <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR'} decimalScale={3}  />   
             </span>
         </h3>
@@ -99,7 +99,7 @@ useEffect(() => {
     </div>
     </div>
     </>
-  )
+)
 }
 
-export default CartItems
+export default CartTotal

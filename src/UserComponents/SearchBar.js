@@ -1,4 +1,4 @@
-import React,{ useState, useContext } from 'react'
+import React,{ useState, useContext, useEffect } from 'react'
 import UserContext from '../CartComponents/userContext.js';
 import './SearchBar.css'
 import Modal from 'react-bootstrap/Modal';
@@ -42,6 +42,46 @@ export const SearchBar = () => {
     };
 
 
+
+    //we are using this object to store information about the item that we currently clicked on
+//and send this information to ItemDescription component
+
+ 
+
+const [selectedItem, setSelectedItem] = useState(
+  [{
+        id: 0,
+        title: "",
+        stock: 0,
+        quantity: 0,
+        image: '',
+        description: "",
+        price: "",
+        info: ""
+}]);
+
+
+
+
+const selectItem = (item) => {
+  setSelectedItem([{id: item.id,
+                  title : item.title,
+                  stock: item.stock,
+                  quantity: item.quantity,
+                  image: item.image,
+                  description: item.description,
+                  price: item.price,
+                  info: item.info
+                 
+  }])
+  console.log(selectedItem)
+}
+
+useEffect(() => {
+  localStorage.setItem("cartList", JSON.stringify(selectedItem))
+}, [selectedItem])
+
+
 return (
 
 <>
@@ -66,7 +106,7 @@ return (
           
           <ul>
           {(query === '' ? "" : list.map(item => {
-            return <li style={{cursor:'pointer'}} onClick={navigateToShop} key={item.id}>{item.title}</li>//when we chose an item in dropdown list it redirects us to that page where item is(in our case shop page)
+            return <li style={{cursor:'pointer'}} onClick={() => {selectItem(item);navigateToShop()}} key={item.id}>{item.title}</li>//when we chose an item in dropdown list it redirects us to that page where item is(in our case shop page)
           }))}
         </ul>
 

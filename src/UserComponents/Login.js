@@ -140,7 +140,13 @@ const Login = ({ handleLogin, login }) => {
         <div className="link">
         <Link to="/register">Sign Up</Link>
         </div>
+        
       </div>
+      <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </>
   )
   

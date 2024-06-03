@@ -1,34 +1,59 @@
-import React,{ useEffect } from 'react'
+import React,{ useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
 import './ItemDescription.css'
-import ItemContext from '../CartComponents/itemContext.js';
+
+
 
 const ItemDescription = () => {
 
-//
-   // const { selectedItem }  = useContext(ItemContext);
+    
+
+//get the selected item from local storage(for displaying on the page)
+const selectedItem = JSON.parse(localStorage.getItem("cartList") || "[]")
+
+//state for counting how many times we have clicked (addToBag) on item
+const [quantity, setQuantity] = useState(0)
+
+
+//it counts number of chosen item that we clicked 
+const itemQuantity = (e) => {
+
+
+    setQuantity(quantity + 1)
+    console.log(quantity)
+
+}
+
+//function for adding items that we choose to CartItems page
+    const addToBag = (item) => {
+
+        //specific id for every key value pair in local storage
+        const now = new Date().getTime().toString();
+
+
+        //we save the chosen item into local storage
+        localStorage.setItem("addedItems"+ now, JSON.stringify(selectedItem))
+        //console.log(localStorage.key(parseInt(now)));
+
+    }
 
     
 
 
 
-    const selectedItem = JSON.parse(localStorage.getItem("cartList") || "[]")
-
-
-
-    //cart items
-//const newSelectedItem = {...selectedItem};//deconstructing
-console.log(selectedItem)
-
-
 //scroll to top of the page on first render
 useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+}, [])
 
 
 
 
-  return (
+
+  //localStorage.removeItem("addedItems1717234757990");
+
+    return (
     <>
     <br/> 
     <br/> 
@@ -36,7 +61,7 @@ useEffect(() => {
         {selectedItem.map((item,index) => {
 
         return (
-               
+
         <div className="cartItems" key={index}>
             
             
@@ -58,7 +83,11 @@ useEffect(() => {
             </div>
             <div className="cart-status">
                 <div className="stockk">
-                    <>{item.stock}</>
+                    <>{item.stock} ({item.quantity})</>
+                </div>
+                <button onClick={() => {addToBag();itemQuantity(item)}}>Add to bag</button>
+                <div className="truck">
+                <FontAwesomeIcon icon={faTruckFast} /> Free shipping
                 </div>
             </div>
             </div>
@@ -81,10 +110,12 @@ useEffect(() => {
             </div>
 
             )})}
+            <br/>
+            <br/>
         </div>
         
     </>
-  )
+)
 }
 
 export default ItemDescription
