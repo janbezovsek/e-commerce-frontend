@@ -2,6 +2,7 @@ import React,{ useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
 import './ItemDescription.css'
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -14,6 +15,18 @@ const selectedItem = JSON.parse(localStorage.getItem("cartList") || "[]")
 
 //state for counting how many times we have clicked (addToBag) on item
 const [quantity, setQuantity] = useState(0)
+
+
+const [show, setShow] = useState(false); //state for managing modal when we click on add Item button
+
+
+//for closing modal
+const handleClose = () => {
+    setTimeout(() => {
+        setShow(false)
+    }, 3000)
+    
+}
 
 
 //it counts number of chosen item that we clicked 
@@ -38,6 +51,10 @@ const itemQuantity = (e) => {
 
     }
 
+
+
+
+
     
 
 
@@ -51,7 +68,7 @@ useEffect(() => {
 
 
 
-  //localStorage.removeItem("addedItems1717234757990");
+  //localStorage.removeItem("addedItems1718431834279");
 
     return (
     <>
@@ -85,7 +102,24 @@ useEffect(() => {
                 <div className="stockk">
                     <>{item.stock} ({item.quantity})</>
                 </div>
-                <button onClick={() => {addToBag();itemQuantity(item)}}>Add to bag</button>
+                <button onClick={() => {addToBag();itemQuantity(item);setShow(true);handleClose()}}>Add to bag</button>
+                <Modal
+                            show={show}
+                            onHide={() => setShow(false)}
+                            dialogClassName="modal-90w"
+                            aria-labelledby="example-custom-modal-styling-title"
+                        >
+                        <Modal.Header closeButton>
+                        <Modal.Title id="example-custom-modal-styling-title">
+                            Shopping bag
+                        </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div>
+                            <img src={item.image} alt="" width="350" height="350"/>
+                            </div> 
+                        </Modal.Body>
+                        </Modal>
                 <div className="truck">
                 <FontAwesomeIcon icon={faTruckFast} /> Free shipping
                 </div>

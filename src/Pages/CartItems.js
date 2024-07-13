@@ -1,20 +1,33 @@
 import React,{ useEffect } from 'react'
 import  { NumericFormat } from 'react-number-format'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faX } from '@fortawesome/free-solid-svg-icons'
 import './CartItems.css'
+
 
 const CartItems = () => {
 
 
 
+  //Array for key values names
+  //for delete function
+  const NamesArray = []
+
+
+
+
+  
+  //Array for items
   const TotalArray = []
 
     Object.keys(localStorage).forEach((key) => {
         
         let name = key
         let variable = JSON.parse(localStorage.getItem(key));
-        if(name !== "cartList"){
-            TotalArray.unshift(variable);
-            
+        if((name !== "cartList") && (name !== "login")){
+            TotalArray.unshift(variable)
+            NamesArray.unshift(name)
+            console.log(NamesArray)
 
         }
         
@@ -44,6 +57,53 @@ const CartItems = () => {
 }
 
 
+//function for deleting all items from the cart and local storage
+const deleteAllItems = () => {
+  
+
+console.log("hello")
+  Object.keys(localStorage).forEach((key) => {
+        
+    let name = key
+    
+    if((name !== "cartList") && (name !== "login")){
+        
+        localStorage.removeItem(name)
+        
+
+    }
+    
+})
+
+window.location.reload(false);
+
+
+ 
+    
+
+  }
+
+
+
+
+
+/*
+//function for deleting an item from the cart and local storage
+const deleteItem = (item) => {
+  console.log(item)
+  const chosenItem = NamesArray.filter((value, index)=>{//NamesArray
+    return  value !== item;
+})
+    console.log(chosenItem)
+}
+
+*/
+
+
+
+
+
+
 //scroll to top of the page on first render
 useEffect(() => {
   window.scrollTo(0, 0)
@@ -64,6 +124,7 @@ useEffect(() => {
         <br/>
         <br/>
         {TotalArray.map((item, index) => {
+          
                         return (
                         
                         <div className="cart-items-items" key={index}>
@@ -71,8 +132,12 @@ useEffect(() => {
                         {item && item.map((item, index) => (
                         <div key={index}>
                         <div className="price">EUR {item.price}</div>
-                        <div className="cart-item" /*onClick={() => {selectItem(item);navigateToShop()}}*/>
                         
+                        <div className="x">
+                          <FontAwesomeIcon icon={faX} /*onClick={() => {deleteItem(item)}} *//> Remove item from cart
+                        </div>
+                        <br/>
+                        <div className="cart-item" /*onClick={() => {selectItem(item);navigateToShop()}}*/>
                         <img src={item.image} alt="" width="150" height="160"/> 
                         </div>
                         <div className="title">{item.title}</div>
@@ -88,14 +153,24 @@ useEffect(() => {
                     )}
         </div>
         <h3>
-            Subtotal({TotalArray.length} items) :
+            Subtotal ({TotalArray.length} items) : 
             <span className="Cart-Total-price">
-                <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR'} decimalScale={3}  />   
+                <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR '} decimalScale={3}  />   
             </span>
         </h3>
+        <div className="button">
         <button>
-        Proceed to Cart Items
+        Proceed to CheckOutPage
         </button>     
+        </div>
+        <br/>
+        <div className='clear'>
+        <button variant="danger" onClick={() => deleteAllItems()}>
+            Clear Cart items
+        </button> 
+        </div>
+        <br/>
+        <br/>
     </div>
     </div>
     </>

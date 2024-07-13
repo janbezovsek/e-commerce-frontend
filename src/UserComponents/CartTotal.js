@@ -6,19 +6,20 @@ import  { NumericFormat } from 'react-number-format';
 
 
 
+
 const CartTotal = () => {
 
   
     
 
-
+    //Array for saving items from local storage
     const TotalArray = []
 
     Object.keys(localStorage).forEach((key) => {
         
         let name = key
         let variable = JSON.parse(localStorage.getItem(key));
-        if(name !== "cartList"){
+        if(name !== "cartList" && name !== "login"){
             TotalArray.unshift(variable);
             
 
@@ -48,6 +49,8 @@ const CartTotal = () => {
     return total
         
 }
+
+
 
 
 
@@ -88,12 +91,18 @@ return (
                     )}
         </div>
         <h3>
-            Subtotal({TotalArray.length} items) :
+            Subtotal ({TotalArray.length} items) :
             <span className="CartTotal-price">
-                <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR'} decimalScale={3}  />   
+                <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR '} decimalScale={3}  />   
             </span>
         </h3>
-        <button>
+        <button style={{"backgroundColor":"#0a0a23",
+    "color": "#fff",
+    "border":"none",
+    "borderRadius":"10px",
+    "minHeight":"30px",
+    "minWidth": "120px",
+    "padding":"15px"}}>
         Proceed to Cart Items
         </button>     
     </div>

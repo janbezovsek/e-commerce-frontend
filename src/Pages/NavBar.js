@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import { SearchBar } from '../UserComponents/SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +29,22 @@ const Navbar=({ login })=>{
 
 
 
+    //logic for displaying total amount of items in navbar
+    const TotalArray = []
 
+    Object.keys(localStorage).forEach((key) => {
+        
+        let name = key
+        let variable = JSON.parse(localStorage.getItem(key));
+        if((name !== "cartList") && (name !== "login")){
+            TotalArray.unshift(variable);
+            
+
+        }
+        
+    })
+
+    
 
 
     return (   
@@ -69,7 +84,7 @@ const Navbar=({ login })=>{
                         <li>
                         <SearchBar />
                         </li>
-                        <div className="cart-count">0</div>
+                        <div className="cart-count">{TotalArray.length}</div>
                         <li className='cart'> 
                         <FontAwesomeIcon icon={faCartShopping} color="#919db1" onClick={() => setShow(true)} />
                         <Modal
@@ -80,13 +95,11 @@ const Navbar=({ login })=>{
                         >
                         <Modal.Header closeButton>
                         <Modal.Title id="example-custom-modal-styling-title">
-                            Custom Modal Styling
+                            Shopping bag
                         </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                        <div >
-                            <input type="text" className="text"  placeholder="Search for items.."   />
-                        </div>
+                        
                             <div>
                             <CartTotal />
                             </div>

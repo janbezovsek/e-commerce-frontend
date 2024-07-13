@@ -6,26 +6,131 @@
 
 .product {
     width: 300px;
+    font-weight: bold;
 }
 
 .price-item {
-    width: 1200px;
+    margin-left: 0px;
     margin-top: -25px;
     border-bottom: 1px solid #fcefef;
+    font-weight: bold;
 }
 
 
 
 .cart-item {
-    
+    margin-left: 20px;
     width: 300px;
 }
 
 .title {
     font-size: 18px;
     width: 300px;
+    font-weight: bold;
 }
 
 .price {
-    width: 1200px;
+    margin-left:0px;
+    font-weight: bold;
+    color: #2b1414;
+}
+
+.button button{
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    min-height:30px; 
+    min-width: 120px;
+    padding:15px;
+    
+}
+
+.button button:hover {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+.Cart-Total-price {
+    color: #2b1414;
+    font-weight: bold;
+}
+
+.x {
+    position: relative;
+    color: #2b1414;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    padding: 30px;  
+    top:40px;
+    
+
+}
+
+.x :hover {
+    color:#cf1717;
+    transition: 0.3s ease-in-out;
+}
+
+.clear button{
+    background-color:#d40a0a;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    min-height:30px; 
+    min-width: 120px;
+    padding:15px;
+    
+}
+
+.clear button:hover {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+
+
+@media screen and (max-width: 750px) {
+    .CartTotal-cartitems {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+
+    .price-item {
+        margin-top: 20px;
+    }
+
+    .button button {
+        
+        margin-top: 120px;
+        position: absolute;
+        right: 10px;
+        padding:15px;
+        height:80px; 
+    width: 60px;
+    
+        
+    }
+
+    .clear button {
+        margin-top: 220px;
+        position: absolute;
+        right: 10px;
+        padding:15px;
+        height:80px; 
+        width: 60px;
+    }
+
+    .Cart-Total-price {
+        color: #2b1414;
+        font-weight: bold;
+    }
+
+    .x {
+        color: #2b1414;
+        cursor: pointer;
+    }
+
+    
 }

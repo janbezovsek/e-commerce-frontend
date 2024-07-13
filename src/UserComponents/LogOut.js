@@ -1,6 +1,12 @@
 import React from 'react'
-import Cookies from "universal-cookie";
+import Cookies from "universal-cookie"
+import './LogOut.css'
 const cookies = new Cookies();
+
+
+
+
+
 
 const LogOut = ({handleLogout }) => {
 
@@ -16,8 +22,19 @@ const LogOut = ({handleLogout }) => {
 
 return (
     <>
+    <br/>
+    <br/>
+    <br/>
+    Are you sure you want to log out
+    <br/>
     {/* logout */}
-    <input type="submit" value="logout" className="btn" onClick={(e) => logout(e)}/>
+    <input type="submit" value="Logout"  className="logoutBtn" onClick={(e) => logout(e)}/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </>
     )
 }
