@@ -2,11 +2,12 @@
 
 This is a MERN stack application that includes authentication(register and login/logout functionalities), saving user's data
 into MongoDB database and common e-commerce practicies like navigating between pages, adding items in the cart bag and 
-calculating prices for chosen items.
+calculating prices for chosen items. Responsive design principles were also applied building this app.
 
 
 ![github1](https://github.com/user-attachments/assets/0dbb3cb1-6310-485e-8562-8e5778415247)
 
+![github2](https://github.com/user-attachments/assets/46c3e55b-f9bc-45e4-8f78-189b714dc37b)
 
 
 ## Available Scripts
