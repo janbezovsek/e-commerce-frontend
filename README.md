@@ -4,6 +4,11 @@ This is a MERN stack application that includes authentication(register and login
 into MongoDB database and common e-commerce practicies like navigating between pages, adding items in the cart bag and 
 calculating prices for chosen items.
 
+
+![github1](https://github.com/user-attachments/assets/0dbb3cb1-6310-485e-8562-8e5778415247)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
