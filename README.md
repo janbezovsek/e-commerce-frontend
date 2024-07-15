@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# E-commerce app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a MERN stack application that includes authentication(register and login/logout functionalities), saving user's data
+into MongoDB database and common e-commerce practicies like navigating between pages, adding items in the cart bag and 
+calculating prices for chosen items.
 
 ## Available Scripts
 
