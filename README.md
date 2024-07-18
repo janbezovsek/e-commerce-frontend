@@ -80,3 +80,4 @@ that has a button for directing you back to Home page.
 Lastly, if we click on Cart logo a modal pops up. It contains images,prices and subtotal price of all items that we added to bag and 
 a button  that directs us to Cart items page.
 
+![github5](https://github.com/user-attachments/assets/d9fb906b-aa81-4f7d-8185-b315742fd0fc)
