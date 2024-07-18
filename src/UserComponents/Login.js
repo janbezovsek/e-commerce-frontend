@@ -40,7 +40,7 @@ const Login = ({ handleLogin, login }) => {
     if(!password.trim()) {
       validationErrors.password = "password is required"
     } else if(password.length < 6 ){
-      validationErrors.password = "password should be at least 6 characters"
+      validationErrors.password = "password should be at least 7 characters"
     }
 
     //if there where errors they where added in here

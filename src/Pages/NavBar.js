@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from 'react';
+import React,{ useState } from 'react';
 import {Link} from 'react-router-dom';
 import { SearchBar } from '../UserComponents/SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,11 +7,6 @@ import CartTotal from '../UserComponents/CartTotal'
 import Modal from 'react-bootstrap/Modal';
 import './NavBar.css';
 import img1 from '../images/navbarImages/shopify.webp'
-
-
-
-
-
 
 
 
@@ -39,20 +34,15 @@ const Navbar=({ login })=>{
         if((name !== "cartList") && (name !== "login")){
             TotalArray.unshift(variable);
             
-
         }
-        
     })
 
     
 
-
     return (   
         <>
         <nav>
-                
                     <div className="navBar">
-                        
                         <ul id="navbar" className={clicked ? "#navbar active" : "#navbar"} >
                         <li>
                         <div className="logo">
@@ -122,11 +112,8 @@ const Navbar=({ login })=>{
                             </div>
                         </li> 
                         )}
-                        
                         </ul>
-                        
                     </div>
-
                     {/*handlebars showing when using phone */}
                     <div id="mobile" onClick={handleClick}>
                         <i className={clicked ?
@@ -134,15 +121,9 @@ const Navbar=({ login })=>{
                         "fas fa-bars"}>
                         </i>
                     </div>
-                    
-
-                    
-                
         </nav>
-            
         </> 
     )
-
 }
 
 export default Navbar;

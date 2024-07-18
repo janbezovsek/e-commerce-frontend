@@ -21,12 +21,6 @@ import ItemDescription from './Pages/ItemDescription.js';
 
 
 
-
-
-
-
-
-
 function App() {
   
   
@@ -40,7 +34,6 @@ const [ items2, setItems2 ] = useState(dataProductsList)
 const [ banners, setBanners ] = useState(bannersItems)
   
   
-
   //state for determening whether user is logged in or not
   const [login, setLogin] = useState(null);
 
@@ -74,31 +67,18 @@ const [ banners, setBanners ] = useState(bannersItems)
     setTimeout(() => {
       navigate('/ItemDescription')
     }, 200);
-    
   }
-
-
-
-  
 
 
 
   return (
     <>
-
     <UserContext.Provider value={{items, setItems, banners, setBanners, navigateToShop, items2, setItems2}}>
     <div className="navbar">
     <Navbar login={login}/>
     </div>
-
-    
-
     <div className="App">
-    
-    
-    
     <Routes>
-    
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/cartItems" element={<CartItems />} />
         <Route exact path="/checkOutPage" element={<CheckOutPage />} />
@@ -111,13 +91,10 @@ const [ banners, setBanners ] = useState(bannersItems)
           <Route exact path="/auth-endpoint"  element={<AuthComponent />}/>
         </Route> 
     </Routes>
-    
     </div>
-
     <div className="footer">
       <Footer />
     </div>
-    
     </UserContext.Provider>
     </>
   );

@@ -6,8 +6,6 @@ const cookies = new Cookies();
 // get token generated on login
 const token = cookies.get("TOKEN");
 
-    
-
 
 //order coonfirmation page, where user needs to be logged in
 const AuthComponent= () => {

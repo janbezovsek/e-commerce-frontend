@@ -8,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 
 const ItemDescription = () => {
 
-    
+
 
 //get the selected item from local storage(for displaying on the page)
 const selectedItem = JSON.parse(localStorage.getItem("cartList") || "[]")
@@ -54,21 +54,12 @@ const itemQuantity = (e) => {
 
 
 
-
-    
-
-
-
 //scroll to top of the page on first render
 useEffect(() => {
     window.scrollTo(0, 0)
 }, [])
 
 
-
-
-
-  //localStorage.removeItem("addedItems1718431834279");
 
     return (
     <>
@@ -80,8 +71,6 @@ useEffect(() => {
         return (
 
         <div className="cartItems" key={index}>
-            
-            
             <div className="cart-image">
             <img src={item.image} alt="" width="330" height="340"/> 
             </div>
@@ -136,18 +125,14 @@ useEffect(() => {
         return (
     
             <div className="cartItems" key={index}>
-
-
                 <div className="about-item">
                     <>{item.description}</>
                 </div>
             </div>
-
             )})}
             <br/>
             <br/>
         </div>
-        
     </>
 )
 }

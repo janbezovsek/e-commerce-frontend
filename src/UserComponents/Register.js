@@ -2,12 +2,10 @@ import React,{ useState } from 'react'
 import '../UserComponents/Register.css'
 import axios from "axios";
 
-//potrebno je dodati funkcijo,ki preveri, če račun že obstaja 
 
 const Register = () => {
     
     
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [register, setRegister] = useState(false);
@@ -36,7 +34,7 @@ const Register = () => {
     if(!password.trim()) {
       validationErrors.password = "password is required"
     } else if(password.length < 6 ){
-      validationErrors.password = "password should be at least 6 characters"
+      validationErrors.password = "password should be at least 7 characters"
     }
 
     //if there where errors they where added in here
@@ -74,7 +72,6 @@ const Register = () => {
         setUser(true)
       });
     }
-
   }
 
 
@@ -109,42 +106,30 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="text_input"
               placeholder="Password"
-
             />
             <div className="notpassword">
             {errors.password && <span>{errors.password}</span>}
             </div>
           </div>
-          
           <input
             type="submit"
             value="REGISTER"
             className="btn"
             onClick={(e) => handleSubmit(e)}
-
           />
-
         {/* display success message */}
         {register ? (
           <p className="text-success">You Are Registered Successfully</p>
         ) : (
           <p className="text-danger">You Are Not Registered or email already exists</p>
         )}
-
         {user ? (
           <p className="text-success">user already exists</p>
         ) : (
           <p className="text-danger"></p>
         )
-
-
         }
-        
-        
-
-
         </form>
-        
       </div>
       <br/>
         <br/>
@@ -153,7 +138,6 @@ const Register = () => {
         <br/>
     </>
   )
-  
 }
 
 export default Register

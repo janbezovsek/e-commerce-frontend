@@ -4,16 +4,11 @@ import Electronics from '../CartComponents/Electronics'
 import Handbags from '../CartComponents/Handbags.js';
 import Sofas from '../CartComponents/Sofas.js';
 import Watches from '../CartComponents/Watches.js';
-import './HomePage.css'
-
 
 
 
 const HomePage = () => {
 
-
-
-  
   return (
     <>
     <div className="carousel">
@@ -35,11 +30,6 @@ const HomePage = () => {
     <div>
       <Sofas />
     </div>
-
-
-  
-
-
 
     </>
   )

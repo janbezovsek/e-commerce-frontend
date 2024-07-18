@@ -1,7 +1,5 @@
 import React,{ useState, useContext, useEffect } from 'react'
 import UserContext from '../CartComponents/userContext.js';
-
-
 import './Items.css'
 
 
@@ -15,16 +13,16 @@ const {items, setItems} = useContext(UserContext);
 const { navigateToShop }  = useContext(UserContext)//for displaying chosen item on ItemDescription page
 
 //cart items
-const newItems = [...items];//deconstructing
+const newItems = [...items];//spread operator
 
 
 //banner items
-const newBanners = [...banners];//deconstructing
+const newBanners = [...banners];//spread operator
+
+
 
 //we are using this object to store information about the item that we currently clicked on
 //and send this information to ItemDescription component
-
-
 
 const [selectedItem, setSelectedItem] = useState(
   [{
@@ -54,6 +52,7 @@ const selectItem = (item) => {
   
 }
 
+
 useEffect(() => {
   localStorage.setItem("cartList", JSON.stringify(selectedItem))
 }, [selectedItem])
@@ -62,12 +61,6 @@ useEffect(() => {
 
   return (
     <>
-    
-    
-    
-    
-    
-    
     <div className="CartItems">
       <br/>
       <br/>
@@ -78,7 +71,6 @@ useEffect(() => {
         {newBanners.map((item, index) => {
 
           return (
-          
           <div className="banners" key={index}>
             {item.watches && item.watches.map((item, index) => (
               <div key={index}>
@@ -89,7 +81,6 @@ useEffect(() => {
         ))}
           </div>
           )
-
         })}
         </div>
       <br />
@@ -101,7 +92,6 @@ useEffect(() => {
                 <div className="CartItems-items">
                     {newItems.map((item, index) => {
                         return (
-                          
                           
                         <div className="items" key={index}>
                         {item.watches && item.watches.map((item, index) => (
@@ -117,9 +107,7 @@ useEffect(() => {
                         </div>
                         
                         ))}                        
-                        
                     </div>
-                    
                     )}
                     )}
                 </div>

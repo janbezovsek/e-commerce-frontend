@@ -4,7 +4,7 @@ import './Items.css'
 
 const Sofas = () => {
 
-  //state for saving banner items that are displayed on Watch page
+  //state for saving banner items that are displayed on Sofas page
 const { banners, setBanners }  = useContext(UserContext);
 
 const {items, setItems} = useContext(UserContext);
@@ -12,15 +12,15 @@ const {items, setItems} = useContext(UserContext);
 const { navigateToShop }  = useContext(UserContext)//for displaying chosen item on ItemDescription page
 
 //cart items
-const newItems = [...items];//deconstructing
+const newItems = [...items];//spread operator
 
 //banner items
-const newBanners = [...banners];//deconstructing
+const newBanners = [...banners];//spread operator
+
+
 
 //we are using this object to store information about the item that we currently clicked on
 //and send this information to ItemDescription component
-
- 
 
 const [selectedItem, setSelectedItem] = useState(
   [{
@@ -50,6 +50,7 @@ const selectItem = (item) => {
   console.log(selectedItem)
 }
 
+
 useEffect(() => {
   localStorage.setItem("cartList", JSON.stringify(selectedItem))
 }, [selectedItem])
@@ -68,7 +69,6 @@ useEffect(() => {
         {newBanners.map((item, index) => {
 
           return (
-          
           <div className="banners" key={index}>
             {item.sofas && item.sofas.map((item, index) => (
               <div key={index}>
@@ -79,7 +79,6 @@ useEffect(() => {
         ))}
           </div>
           )
-
         })}
         </div>
       <br />
@@ -92,7 +91,6 @@ useEffect(() => {
                     {newItems.map((item, index) => {
                         return (
                         
-                          
                         <div className="items" key={index}>
                         {item.sofas && item.sofas.map((item, index) => (
                         <div key={index}>
@@ -104,10 +102,7 @@ useEffect(() => {
                         <div className='stock'>{item.quantity} {item.stock}</div>
                         <hr />
                         </div>
-                        
                         ))}  
-                       
-
                     </div>
                     )}
                     )}

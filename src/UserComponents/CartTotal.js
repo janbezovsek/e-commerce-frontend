@@ -1,16 +1,19 @@
 import React,{ useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import  { NumericFormat } from 'react-number-format';
-
-
-
-
 
 
 
 const CartTotal = () => {
 
-  
-    
+
+    //navigate hook to direct to cart items page
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/cartItems");
+    };
+
 
     //Array for saving items from local storage
     const TotalArray = []
@@ -22,11 +25,8 @@ const CartTotal = () => {
         if(name !== "cartList" && name !== "login"){
             TotalArray.unshift(variable);
             
-
         }
-        
     })
-
 
 
     //init total price to 0
@@ -52,30 +52,24 @@ const CartTotal = () => {
 
 
 
-
-
 //scroll to top of the page on first render
 useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-
+}, [])
 
 
 
 return (
     <>
     <div className="App">
-    
     <div className="CartTotal">
         <div className="choseItems">
         {TotalArray.map((item, index) => {
                         return (
-                        
                         <div className="items" key={index}>
                         {item && item.map((item, index) => (
                         <div key={index}>
-                        <div className="item" /*onClick={() => {selectItem(item);navigateToShop()}}*/>
-                        
+                        <div className="item" >
                         <img src={item.image} alt="" width="50" height="50"/> 
                         </div>
                         <h3>{item.title}</h3>
@@ -83,10 +77,8 @@ return (
                         <div className='stock'>{item.quantity} {item.stock}</div>
                         <hr />
                         </div>
-                        
                         ))}
                         </div>
-                    
                     )}
                     )}
         </div>
@@ -96,7 +88,7 @@ return (
                 <NumericFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'EUR '} decimalScale={3}  />   
             </span>
         </h3>
-        <button style={{"backgroundColor":"#0a0a23",
+        <button onClick={handleClick} style={{"backgroundColor":"#0a0a23",
     "color": "#fff",
     "border":"none",
     "borderRadius":"10px",

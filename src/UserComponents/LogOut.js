@@ -5,9 +5,6 @@ const cookies = new Cookies();
 
 
 
-
-
-
 const LogOut = ({handleLogout }) => {
 
     // logout

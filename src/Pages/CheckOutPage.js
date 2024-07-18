@@ -14,18 +14,7 @@ import './CheckOutPage.css'
 
 
 
-
-
-
-
-
-
-
-
-
-
 const CheckOutPage = () => {
-
 
 
 
@@ -39,9 +28,7 @@ const CheckOutPage = () => {
       if((name !== "cartList") && (name !== "login")){
           TotalArray.unshift(variable);
           
-
       }
-      
   })
 
   // Retrieving data from SessionStorage for Total price
@@ -69,22 +56,14 @@ const CheckOutPage = () => {
       <MDBInput wrapperClass='mb-4' type='email' id='form6Example5' label='Email' placeholder="Email…"/>
       <MDBInput wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone' placeholder="Phone number…" />
 
-      
-
       <MDBCheckbox
         wrapperClass='d-flex justify-content-center mb-4'
         id='form6Example8'
         label='Create an account?'
         defaultChecked
       />
-
-      
-      
       </form>
-      
-     
       <form>
-    
     <MDBContainer fluid className="py-5" style={{ backgroundColor: "#1b2430" }}>
       <MDBRow className="d-flex justify-content-center">
         <MDBCol>
@@ -138,18 +117,12 @@ const CheckOutPage = () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
-    
     </form>
-    
     </div>
     <br/>
-    
-   
     <div className="thirdbox">
-
     </div>
     </div>
-    
   )
 }
 
