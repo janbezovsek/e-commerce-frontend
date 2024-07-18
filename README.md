@@ -26,9 +26,18 @@ four sections of different items and banners accompanying them. In the future up
 and their corresponding info using the page in the form of Admin account. The footer has links just for appearances, when clicked 
 they take you to 404 page. When item is clicked it navigates you to Cart items page.
 
+
+![github3](https://github.com/user-attachments/assets/c3c79bcb-9dd3-4c5c-840f-c70260a0cb4f)
+
+
+
 On Cart items page we have a list of all the items that we chose and two buttons, one for clearing the list and one for directing
 us to Check out page. We also have X characters left of the images for deleting items individually, but at the moment we haven't
 build a logic to make it work.
+
+
+![github4](https://github.com/user-attachments/assets/9bbfaa8e-0017-4063-93d0-6b764d705ba2)
+
 
 
 On the Check out page we have a template for filling out the users info, which at the moment doesn't have any code behind it.
@@ -60,6 +69,7 @@ that has a button for directing you back to Home page.
 Lastly, if we click on Cart logo a modal pops up. It contains images,prices and subtotal price of all items that we added to bag and 
 a button  that directs us to Cart items page.
 
+![github5](https://github.com/user-attachments/assets/ac4c7474-ca2f-469d-9681-0d5516c3b490)
 
 
 
