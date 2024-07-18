@@ -6,7 +6,10 @@ calculating prices for chosen items. Responsive design principles were also appl
 fit every screen, e.g. mobiles, tablets.
 
 
+
 ![github1](https://github.com/user-attachments/assets/0dbb3cb1-6310-485e-8562-8e5778415247)
+
+
 
 ![github2](https://github.com/user-attachments/assets/46c3e55b-f9bc-45e4-8f78-189b714dc37b)
 
@@ -27,7 +30,11 @@ and their corresponding info using the page in the form of Admin account. The fo
 they take you to 404 page. When item is clicked it navigates you to Cart items page.
 
 
+
+
 ![github3](https://github.com/user-attachments/assets/c3c79bcb-9dd3-4c5c-840f-c70260a0cb4f)
+
+
 
 
 
@@ -36,7 +43,11 @@ us to Check out page. We also have X characters left of the images for deleting 
 build a logic to make it work.
 
 
+
+
 ![github4](https://github.com/user-attachments/assets/9bbfaa8e-0017-4063-93d0-6b764d705ba2)
+
+
 
 
 
@@ -68,6 +79,8 @@ that has a button for directing you back to Home page.
 
 Lastly, if we click on Cart logo a modal pops up. It contains images,prices and subtotal price of all items that we added to bag and 
 a button  that directs us to Cart items page.
+
+
 
 ![github5](https://github.com/user-attachments/assets/ac4c7474-ca2f-469d-9681-0d5516c3b490)
 
