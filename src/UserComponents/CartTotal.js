@@ -1,14 +1,12 @@
 import React,{ useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import  { NumericFormat } from 'react-number-format';
 
 
 
-const CartTotal = () => {
+const CartTotal = ({navigate}) => {
 
 
     //navigate hook to direct to cart items page
-    const navigate = useNavigate();
 
     const handleClick = () => {
         navigate("/cartItems");
@@ -40,7 +38,7 @@ const CartTotal = () => {
         
         total += item.price
         
-        console.log(total)
+       // console.log(total)
         
     })
     //save total price to session storage

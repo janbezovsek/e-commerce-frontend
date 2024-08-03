@@ -75,12 +75,12 @@ const [ banners, setBanners ] = useState(bannersItems)
     <>
     <UserContext.Provider value={{items, setItems, banners, setBanners, navigateToShop, items2, setItems2}}>
     <div className="navbar">
-    <Navbar login={login}/>
+    <Navbar login={login} navigate={navigate}/>
     </div>
     <div className="App">
     <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/cartItems" element={<CartItems />} />
+        <Route exact path="/cartItems" element={<CartItems navigate={navigate}/>} />
         <Route exact path="/checkOutPage" element={<CheckOutPage />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login handleLogin={handleLogin} login={login} />} />
@@ -95,6 +95,7 @@ const [ banners, setBanners ] = useState(bannersItems)
     <div className="footer">
       <Footer />
     </div>
+
     </UserContext.Provider>
     </>
   );

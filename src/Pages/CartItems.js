@@ -1,16 +1,14 @@
 import React,{ useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import  { NumericFormat } from 'react-number-format'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import './CartItems.css'
 
 
-const CartItems = () => {
+const CartItems = ({navigate}) => {
 
   
   //navigate hook to direct to checkout page
-  const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/checkOutPage");
@@ -34,7 +32,7 @@ const CartItems = () => {
         if((name !== "cartList") && (name !== "login")){
             TotalArray.unshift(variable)
             NamesArray.unshift(name)
-            console.log(NamesArray)
+            //console.log(NamesArray)
         }
         
     })
@@ -47,12 +45,12 @@ const CartItems = () => {
     const getTotalPrice = () => {
     
         let total = 0
-        console.log(TotalArray.length)
+        //console.log(TotalArray.length)
         TotalArray.forEach(([item])=>{
         
         total += item.price
         
-        console.log(total)
+        //console.log(total)
         
     })
 
@@ -105,6 +103,7 @@ useEffect(() => {
 
 
 
+
   return (
     <>
     <div className="Cart">
@@ -143,7 +142,7 @@ useEffect(() => {
             </span>
         </h3>
         <div className="button">
-        <button onClick={handleClick}>
+        <button onClick={()=>handleClick()}>
         Proceed to CheckOutPage
         </button>     
         </div>

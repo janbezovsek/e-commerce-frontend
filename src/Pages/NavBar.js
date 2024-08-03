@@ -10,7 +10,7 @@ import img1 from '../images/navbarImages/shopify.webp'
 
 
 
-const Navbar=({ login })=>{
+const Navbar=({ login , navigate})=>{
 
     const [clicked, setClicked] = useState(false)
 
@@ -91,7 +91,7 @@ const Navbar=({ login })=>{
                         <Modal.Body>
                         
                             <div>
-                            <CartTotal />
+                            <CartTotal navigate={navigate}/>
                             </div>
                         </Modal.Body>
                         </Modal>
