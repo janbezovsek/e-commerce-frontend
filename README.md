@@ -81,3 +81,16 @@ Lastly, if we click on Cart logo a modal pops up. It contains images,prices and 
 a button  that directs us to Cart items page.
 
 ![github5](https://github.com/user-attachments/assets/d9fb906b-aa81-4f7d-8185-b315742fd0fc)
+
+
+
+-Future modifications
+
+We still haven't used authorization component AuthComponent.js(it is fully operational) which can be accessed once we login in to the application.
+It could be used with relation to also unused profile icon that we have in the navbar, so that only authorized users(logged in) can access it.
+
+Saving items in the user profile in MongoDB database.
+
+Checkout page still needs logic behind Order now button
+
+Creating Admin account and corresponding Admin page for maintaining the app
