@@ -5,6 +5,10 @@ into MongoDB database and common e-commerce practicies like navigating between p
 calculating prices for chosen items. Responsive design principles were also applied building this app so that the pages 
 fit every screen, e.g. mobiles, tablets.
 
+### Docker setup
+When building image we need to change proxy from "proxy": "http://localhost:5000"
+to "proxy": "https://e-commerce-server:5000",
+
 
 
 ![github1](https://github.com/user-attachments/assets/0dbb3cb1-6310-485e-8562-8e5778415247)
