@@ -5,11 +5,43 @@ into MongoDB database and common e-commerce practicies like navigating between p
 calculating prices for chosen items. Responsive design principles were also applied building this app so that the pages 
 fit every screen, e.g. mobiles, tablets.
 
+
+
 ### Docker setup
-When building image we need to change proxy from "proxy": "http://localhost:5000"
-to "proxy": "https://e-commerce-server:5000",
+
+We have build a front end image, back end image and database image. Then in the root file we
+created compose.yaml file for connecting it all together. We pushed our project to Docker hub
+https://hub.docker.com/repository/docker/bezovsekjan/client-ecommerce/general 
+When building a client image we need to change proxy from "proxy": "http://localhost:5000"
+to "proxy": "https://<"your server image name">:5000"
 
 
+
+compose.yaml file in the root directory
+
+services:
+  client:
+    image: e-commerce-client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+  
+  server:
+    image: e-commerce-server
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+
+
+
+
+## App
 
 ![github1](https://github.com/user-attachments/assets/0dbb3cb1-6310-485e-8562-8e5778415247)
 
@@ -34,6 +66,9 @@ and their corresponding info using the page in the form of Admin account. The fo
 they take you to 404 page. When item is clicked it navigates you to Cart items page.
 
 
+
+
+- Before starting the app the local storage should be cleared to avoid errors.
 
 
 ![github3](https://github.com/user-attachments/assets/c3c79bcb-9dd3-4c5c-840f-c70260a0cb4f)
