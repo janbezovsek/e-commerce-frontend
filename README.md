@@ -16,28 +16,8 @@ When building a client image we need to change proxy from "proxy": "http://local
 to "proxy": "https://<"your server image name">:5000"
 
 
-
-compose.yaml file in the root directory
-
-services:
-  client:
-    image: e-commerce-client
-    stdin_open: true
-    ports:
-      - "3000:3000"
-  
-  server:
-    image: e-commerce-server
-    ports:
-      - "5000:5000"
-    depends_on:
-      - mongo
-  
-  mongo:
-    image: mongo:6
-    ports:
-      - "27017:27017"
-
+compose.yaml file should be located in the root file, not inside the client, we put it here for 
+code demonstration.
 
 
 

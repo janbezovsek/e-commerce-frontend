@@ -1,0 +1,18 @@
+services:
+  client:
+    image: e-commerce-client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+  
+  server:
+    image: e-commerce-server
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
