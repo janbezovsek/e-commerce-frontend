@@ -11,15 +11,16 @@ import CartItems from './Pages/CartItems.js';
 import CheckOutPage from './Pages/CheckOutPage.js'; 
 import NoPage from './Pages/NoPage.js';
 import Navbar from './Pages/NavBar';
+import Footer from './Pages/Footer.js'
+*/
 import AuthComponent from "./UserComponents/AuthComponent.js"
 import ProtectedRoutes from './UserComponents/ProtectedRoutes.js';
-import Footer from './Pages/Footer.js'
 import dataProducts from './CartComponents/data.js';
 import dataProductsList from './CartComponents/data2.js';
 import bannersItems from './CartComponents/banners.js';
 import  UserContext  from './CartComponents/userContext.js';
 import ItemDescription from './Pages/ItemDescription.js';
-*/
+
 const Register = lazy(() => import('./UserComponents/Register.js'))
 const Login = lazy(() => import('./UserComponents/Login.js'))
 const LogOut = lazy(() => import('./UserComponents/LogOut.js'))
@@ -28,14 +29,14 @@ const CartItems = lazy(() => import('./Pages/CartItems.js'))
 const CheckOutPage = lazy(() => import('./Pages/CheckOutPage.js'))
 const NoPage = lazy(() => import('./Pages/NoPage.js'))
 const Navbar = lazy(() => import('./Pages/NavBar'))
-const AuthComponent = lazy(() => import('./UserComponents/AuthComponent.js'))
-const ProtectedRoutes = lazy(() => import('./UserComponents/ProtectedRoutes.js'))
+//const AuthComponent = lazy(() => import('./UserComponents/AuthComponent.js'))
+//const ProtectedRoutes = lazy(() => import('./UserComponents/ProtectedRoutes.js'))
 const Footer = lazy(() => import('./Pages/Footer.js'))
-const dataProducts = lazy(() => import('./CartComponents/data.js'))
-const dataProductsList = lazy(() => import('./CartComponents/data2.js'))
-const bannersItems = lazy(() => import('./CartComponents/banners.js'))
-const UserContext = lazy(() => import('./CartComponents/userContext.js'))
-const ItemDescription = lazy(() => import('./Pages/ItemDescription.js'))
+//const dataProducts = lazy(() => import('./CartComponents/data.js'))
+//const dataProductsList = lazy(() => import('./CartComponents/data2.js'))
+//const bannersItems = lazy(() => import('./CartComponents/banners.js'))
+//const UserContext = lazy(() => import('./CartComponents/userContext.js'))
+//const ItemDescription = lazy(() => import('./Pages/ItemDescription.js'))
 
 
 const renderLoader = () => <p>Loading</p>;
