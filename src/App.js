@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,lazy,Suspense} from 'react'
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, useNavigate} from 'react-router-dom'
+/*
 import Register from './UserComponents/Register.js';
 import Login from './UserComponents/Login.js';
 import LogOut from './UserComponents/LogOut.js';
@@ -18,9 +19,26 @@ import dataProductsList from './CartComponents/data2.js';
 import bannersItems from './CartComponents/banners.js';
 import  UserContext  from './CartComponents/userContext.js';
 import ItemDescription from './Pages/ItemDescription.js';
+*/
+const Register = lazy(() => import('./UserComponents/Register.js'))
+const Login = lazy(() => import('./UserComponents/Login.js'))
+const LogOut = lazy(() => import('./UserComponents/LogOut.js'))
+const HomePage = lazy(() => import('./Pages/HomePage.js'))
+const CartItems = lazy(() => import('./Pages/CartItems.js'))
+const CheckOutPage = lazy(() => import('./Pages/CheckOutPage.js'))
+const NoPage = lazy(() => import('./Pages/NoPage.js'))
+const Navbar = lazy(() => import('./Pages/NavBar'))
+const AuthComponent = lazy(() => import('./UserComponents/AuthComponent.js'))
+const ProtectedRoutes = lazy(() => import('./UserComponents/ProtectedRoutes.js'))
+const Footer = lazy(() => import('./Pages/Footer.js'))
+const dataProducts = lazy(() => import('./CartComponents/data.js'))
+const dataProductsList = lazy(() => import('./CartComponents/data2.js'))
+const bannersItems = lazy(() => import('./CartComponents/banners.js'))
+const UserContext = lazy(() => import('./CartComponents/userContext.js'))
+const ItemDescription = lazy(() => import('./Pages/ItemDescription.js'))
 
 
-
+const renderLoader = () => <p>Loading</p>;
 function App() {
   
   
@@ -73,6 +91,7 @@ const [ banners, setBanners ] = useState(bannersItems)
 
   return (
     <>
+    <Suspense fallback={renderLoader()}>
     <UserContext.Provider value={{items, setItems, banners, setBanners, navigateToShop, items2, setItems2}}>
     <div className="navbar">
     <Navbar login={login} navigate={navigate}/>
@@ -95,8 +114,8 @@ const [ banners, setBanners ] = useState(bannersItems)
     <div className="footer">
       <Footer />
     </div>
-
     </UserContext.Provider>
+    </Suspense>
     </>
   );
 }
