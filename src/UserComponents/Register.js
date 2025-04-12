@@ -51,7 +51,7 @@ const Register = () => {
         // set configurations
         const configuration = {
         method: "post",
-        url: "http://localhost:5000/register",
+        url: "https://e-commerce-backend-lsu8.onrender.com/register",
         data: {
             email,
             password,

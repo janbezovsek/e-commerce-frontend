@@ -56,7 +56,7 @@ const Login = ({ handleLogin, login }) => {
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:5000/login",
+      url: "https://e-commerce-backend-lsu8.onrender.com/login",
       data: {
         email,
         password,
